@@ -4,6 +4,12 @@ import { Input, CheckBox, Button, Icon } from 'react-native-elements';
 import { SecureStore, Permissions, ImagePicker, Asset, ImageManipulator } from 'expo';
 import { createBottomTabNavigator } from 'react-navigation';
 import { baseUrl } from '../shared/baseUrl';
+import * as SecureStore from 'expo-secure-store';
+import * as Permissions from 'expo-permissions';
+import * as ImagePicker from 'expo-image-picker';
+import { Asset } from "expo-asset"
+import * as ImageManipulator from "expo-image-manipulator"
+import { baseUrl } from '../shared/baseUrl'
 
 class LoginTab extends Component {
 
@@ -149,6 +155,17 @@ class RegisterTab extends Component {
 
     }
 
+    getImageFromGallery = async () => {
+        const selectImage = await ImagePicker.launchImageLibraryAsync({
+            allowsEditing: true,
+            aspect: [4, 3],
+        })
+        if (!selectImage.cancelled) {
+            console.log(selectImage)
+            this.processImage(selectImage.uri)
+        }
+    }
+
     processImage = async (imageUri) => {
         let processedImage = await ImageManipulator.manipulate(
             imageUri, 
@@ -194,6 +211,10 @@ class RegisterTab extends Component {
                     <Button
                         title="Camera"
                         onPress={this.getImageFromCamera}
+                        />
+                     <Button
+                            title = 'Gallery'
+                            onPress={ this.getImageFromGallery }
                         />
                 </View>
                 <Input
