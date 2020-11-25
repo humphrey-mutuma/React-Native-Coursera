@@ -1,32 +1,15 @@
 {
   "expo": {
+    "sdkVersion": "27.0.0",
     "name": "confusion",
-    "slug": "confusion",
+    "icon": "./icon.png",
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "slug": "confusion",
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "net.food.confusion.confusion"
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
+      "package": "net.food.confusion.confusion"
     }
   }
 }

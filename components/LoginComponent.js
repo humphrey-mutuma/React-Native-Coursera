@@ -283,12 +283,12 @@ class RegisterTab extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         margin: 20,
     },
     imageContainer: {
         flex: 1,
-        flexDirection: 'row',
+        flexDirection: 'space-around',
         margin: 20
     },
     image: {
